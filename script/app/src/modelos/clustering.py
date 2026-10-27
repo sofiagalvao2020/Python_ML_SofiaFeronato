@@ -70,7 +70,7 @@ class Clustering:
                     o modelo
                     de clustering.
                 df_test: pd.DataFrame, opcional
-                    DataFrame contendo os dados de validação. Padrão
+                    DataFrame contendo os dados de teste. Padrão
                     é df_test.
             Retorna:
                 bool - Resultado do teste de consistência dos clusters.
@@ -120,7 +120,7 @@ class Clustering:
         msn_resul += f"{np.unique(labels_train)}<br><br>"
         msn_resul += "Frequências Esperadas na Validação (Treino): <br>"
         msn_resul += f"{expected_val_counts.values}<br><br>"
-        msn_resul += "Frequências Observadas na Validação: <br>"
+        msn_resul += "Frequências Observadas no Teste: <br>"
         msn_resul += f"       {observed_val_counts.values}<br>"
         msn_resul += "-" * 50 + "<br>"
         msn_resul += f"Estatística Qui-Quadrado (χ²): {chi2_stat:.4f}<br>"
@@ -130,14 +130,14 @@ class Clustering:
 
         if p_value > 0.05:
             mensagem = "Conclusão 1: Não rejeitamos H0. A distribuição dos "
-            mensagem += "clusters na validação "
+            mensagem += "clusters no teste "
             mensagem += "<b style='color: green;'>É IGUAL</b>"
             mensagem += " à do treino (p > 0.05)."
             mensagem += "<br>"
             msn_resul += mensagem
         else:
-            mensagem = "Conclusão:  2Rejeitamos H0. A distribuição dos "
-            mensagem += "clusters na validação "
+            mensagem = "Conclusão:  Rejeitamos H0. A distribuição dos "
+            mensagem += "clusters no teste "
             mensagem += "<b style='color: red;'>É DIFERENTE</b>"
             mensagem += " da do treino (p <= 0.05)."
             mensagem += "<br>"
@@ -146,15 +146,15 @@ class Clustering:
         msn_resul += "<br>"
 
         if ari_score > 0.5:
-            mensagem = "Conclusão: O modelo de clustering do Treino e o "
-            mensagem += "modelo da Validação "
+            mensagem = "Conclusão: O modelo de clustering do treino e o "
+            mensagem += "modelo da teste "
             mensagem += "<b style='color: green;'>SÃO SEMELHANTES</b>"
             mensagem += f" (ARI = {ari_score:.4f})."
             mensagem += "<br>"
             msn_resul += mensagem
         else:
-            mensagem = "Conclusão: O modelo de clustering do Treino e o "
-            mensagem += "modelo da Validação "
+            mensagem = "Conclusão: O modelo de clustering do treino e o "
+            mensagem += "modelo da teste "
             mensagem += "<b style='color: red;'>NÃO SÃO SEMELHANTES</b>"
             mensagem += f" (ARI = {ari_score:.4f})."
             mensagem += "<br>"
@@ -186,7 +186,7 @@ class Clustering:
                     DataFrame contendo os dados de treino. Padrão
                     é self.df.
                 df_test: pd.DataFrame, opcional
-                    DataFrame contendo os dados de validação. Padrão
+                    DataFrame contendo os dados de teste. Padrão
                     é df_test.
             Retorna:
                 bool - Resultado do teste de consistência dos clusters.
@@ -246,7 +246,7 @@ class Clustering:
         msn_resul += f"{np.unique(labels_train)}<br><br>"
         msn_resul += "Frequências Esperadas na Validação (Treino): <br>"
         msn_resul += f"{expected_val_counts.values}<br><br>"
-        msn_resul += "Frequências Observadas na Validação: <br>"
+        msn_resul += "Frequências Observadas no Teste: <br>"
         msn_resul += f"       {observed_val_counts.values}<br>"
         msn_resul += "-" * 50 + "<br>"
         msn_resul += f"Estatística Qui-Quadrado (χ²): {chi2_stat:.4f}<br>"
@@ -256,14 +256,14 @@ class Clustering:
 
         if p_value > 0.05:
             mensagem = "Conclusão 1: Não rejeitamos H0. A distribuição dos "
-            mensagem += "clusters na validação "
+            mensagem += "clusters no teste "
             mensagem += "<b style='color: green;'>É IGUAL</b>"
             mensagem += " à do treino (p > 0.05)."
             mensagem += "<br>"
             msn_resul += mensagem
         else:
             mensagem = "Conclusão:  2Rejeitamos H0. A distribuição dos "
-            mensagem += "clusters na validação "
+            mensagem += "clusters no teste "
             mensagem += "<b style='color: red;'>É DIFERENTE</b>"
             mensagem += " da do treino (p <= 0.05)."
             mensagem += "<br>"
@@ -273,14 +273,14 @@ class Clustering:
 
         if ari_score > 0.5:
             mensagem = "Conclusão: O modelo de clustering do Treino e o "
-            mensagem += "modelo da Validação "
+            mensagem += "modelo da teste "
             mensagem += "<b style='color: green;'>SÃO SEMELHANTES</b>"
             mensagem += f" (ARI = {ari_score:.4f})."
             mensagem += "<br>"
             msn_resul += mensagem
         else:
             mensagem = "Conclusão: O modelo de clustering do Treino e o "
-            mensagem += "modelo da Validação "
+            mensagem += "modelo da teste "
             mensagem += "<b style='color: red;'>NÃO SÃO SEMELHANTES</b>"
             mensagem += f" (ARI = {ari_score:.4f})."
             mensagem += "<br>"
@@ -312,7 +312,7 @@ class Clustering:
                     DataFrame contendo os dados de treino.
                     Padrão é self.df.
                 df_test: pd.DataFrame, opcional
-                    DataFrame contendo os dados de validação.
+                    DataFrame contendo os dados de teste.
                     Padrão é df_test.
             Retorna:
                 bool - Resultado do teste de consistência dos clusters.
@@ -371,7 +371,7 @@ class Clustering:
         msn_resul += f"{np.unique(labels_train)}<br><br>"
         msn_resul += "Frequências Esperadas na Validação (Treino): <br>"
         msn_resul += f"{expected_val_counts.values}<br><br>"
-        msn_resul += "Frequências Observadas na Validação: <br>"
+        msn_resul += "Frequências Observadas no Teste: <br>"
         msn_resul += f"       {observed_val_counts.values}<br>"
         msn_resul += "-" * 50 + "<br>"
         msn_resul += f"Estatística Qui-Quadrado (χ²): {chi2_stat:.4f}<br>"
@@ -381,14 +381,14 @@ class Clustering:
 
         if p_value > 0.05:
             mensagem = "Conclusão 1: Não rejeitamos H0. A distribuição dos "
-            mensagem += "clusters na validação "
+            mensagem += "clusters no teste "
             mensagem += "<b style='color: green;'>É IGUAL</b>"
             mensagem += " à do treino (p > 0.05)."
             mensagem += "<br>"
             msn_resul += mensagem
         else:
             mensagem = "Conclusão 2: Rejeitamos H0. A distribuição dos "
-            mensagem += "clusters na validação "
+            mensagem += "clusters no teste "
             mensagem += "<b style='color: red;'>É DIFERENTE</b>"
             mensagem += " da do treino (p <= 0.05)."
             mensagem += "<br>"
@@ -398,14 +398,14 @@ class Clustering:
 
         if ari_score > 0.5:
             mensagem = "Conclusão: O modelo de clustering do Treino e o "
-            mensagem += "modelo da Validação "
+            mensagem += "modelo de teste "
             mensagem += "<b style='color: green;'>SÃO SEMELHANTES</b>"
             mensagem += f" (ARI = {ari_score:.4f})."
             mensagem += "<br>"
             msn_resul += mensagem
         else:
             mensagem = "Conclusão: O modelo de clustering do Treino e o "
-            mensagem += "modelo da Validação "
+            mensagem += "modelo de teste "
             mensagem += "<b style='color: red;'>NÃO SÃO SEMELHANTES</b>"
             mensagem += f" (ARI = {ari_score:.4f})."
             mensagem += "<br>"
@@ -430,7 +430,7 @@ class Clustering:
                     modelo
                     de clustering.
                 df_test: pd.DataFrame, opcional
-                    DataFrame contendo os dados de validação. Padrão é
+                    DataFrame contendo os dados de teste. Padrão é
                     df_test.
             Retorna:
                 bool: True se a distribuição dos clusters na validação é
