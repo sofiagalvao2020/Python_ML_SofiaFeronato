@@ -130,8 +130,8 @@ pyasn1==0.6.4
 pyasn1_modules==0.4.2
 pycodestyle==2.9.1
 pycparser==3.0
-pydantic==2.14.1
-pydantic_core==2.50.1
+pydantic
+pydantic_core
 pydeck==0.9.3
 pyflakes==2.5.0
 Pygments==2.20.0
