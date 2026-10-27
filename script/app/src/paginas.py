@@ -24,6 +24,7 @@ class Paginas:
         banco = acesso_data_banco()
         link = banco + "df_estruturada_Sofia/"
         datasets = [link + i for i in os.listdir(link) if ".csv" in i]
+        #st.write(datasets)
         df_test = pd.read_csv(datasets[0])
         df_train = pd.read_csv(datasets[1])
         df_valid = pd.read_csv(datasets[2])
